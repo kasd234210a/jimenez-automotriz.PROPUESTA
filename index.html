@@ -186,7 +186,7 @@ footer{background:var(--negro);color:var(--gris);padding:56px 0 32px}
           Escríbenos por WhatsApp</a>
       </div>
     </div>
-    <div class="ph dark hero-img"><img src="images/sedan-mercedes-benz.jpg" alt="Sedán Mercedes-Benz" loading="eager"></div>
+    <div class="ph dark hero-img"><img src="sedan-mercedes-benz.jpg" alt="Sedán Mercedes-Benz" loading="eager"></div>
   </div>
 </section>
 
@@ -227,9 +227,9 @@ footer{background:var(--negro);color:var(--gris);padding:56px 0 32px}
       <p style="max-width:420px;color:#C3C8CF;font-size:16px;line-height:1.6;margin:0">Estos vehículos vienen en camino. Escríbenos y te avisamos primero cuando lleguen al showroom.</p>
     </div>
     <div class="grid-prox">
-      <article class="prox"><div class="ph dark"><img src="images/sedan-bmw-serie-3.jpg" alt="Sedán BMW Serie 3" loading="lazy"></div><div class="prox-body"><div><h3>BMW Serie 3</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
-      <article class="prox"><div class="ph dark"><img src="images/sedan-audi-a4.jpg" alt="Sedán Audi A4" loading="lazy"></div><div class="prox-body"><div><h3>Audi A4</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
-      <article class="prox"><div class="ph dark"><img src="images/suv-kia-seltos.jpg" alt="SUV Kia Seltos" loading="lazy"></div><div class="prox-body"><div><h3>Kia Seltos</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
+      <article class="prox"><div class="ph dark"><img src="sedan-bmw-serie-3.jpg" alt="Sedán BMW Serie 3" loading="lazy"></div><div class="prox-body"><div><h3>BMW Serie 3</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
+      <article class="prox"><div class="ph dark"><img src="sedan-audi-a4.jpg" alt="Sedán Audi A4" loading="lazy"></div><div class="prox-body"><div><h3>Audi A4</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
+      <article class="prox"><div class="ph dark"><img src="suv-kia-seltos.jpg" alt="SUV Kia Seltos" loading="lazy"></div><div class="prox-body"><div><h3>Kia Seltos</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
     </div>
   </div>
 </section>
@@ -319,7 +319,7 @@ const carros=[
 const WA='https://wa.me/57XXXXXXXXXX?text=';
 document.getElementById('carros').innerHTML=carros.map(x=>`
 <article class="carro" data-tipo="${x.tipo}">
-  <div class="ph">${x.img ? `<img src="images/${x.img}" alt="${x.n}" loading="lazy">` : 'Foto del vehículo'}<span class="tag ${x.t==='Recién llegado'?'nuevo':''}">${x.t}</span></div>
+  <div class="ph">${x.img ? `<img src="${x.img}" alt="${x.n}" loading="lazy">` : 'Foto del vehículo'}<span class="tag ${x.t==='Recién llegado'?'nuevo':''}">${x.t}</span></div>
   <div class="carro-body">
     <div><h3>${x.n}</h3><p class="ver">${x.v}</p></div>
     <div class="datos"><span>${x.a}</span><span>${x.k}</span><span>${x.c}</span></div>
