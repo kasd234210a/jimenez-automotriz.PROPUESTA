@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jiménez Automotriz · Tu próximo carro te está esperando</title>
+<meta name="description" content="Vehículos disponibles, próximos a llegar y financiación a tu medida en Jiménez Automotriz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#2C6CA6;--azul-claro:#4A8BD0;--grafito:#5B5F66;--negro:#0F1114;--negro2:#1A1D22;--linea:#E4E8EC;--suave:#F4F6F8;--texto:#15171A;--gris:#A9ADB3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Montserrat,system-ui,sans-serif;color:var(--texto);background:#fff;-webkit-font-smoothing:antialiased}
+a{color:var(--azul);text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;border-radius:999px;font-weight:700;font-size:15px;border:0;cursor:pointer;font-family:inherit;transition:transform .15s,background .2s}
+.btn:hover{transform:translateY(-1px)}
+.btn-azul{background:var(--azul);color:#fff}.btn-azul:hover{background:#245a8b}
+.btn-blanco{background:#fff;color:var(--negro)}
+.btn-linea{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px #4A5058}
+.btn-suave{background:#F1F4F7;color:var(--texto)}
+.kick{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--azul);margin:0}
+.oscuro .kick{color:var(--azul-claro)}
+h2.titulo{font-size:clamp(28px,3.4vw,46px);font-weight:800;letter-spacing:-.02em;line-height:1.08;margin:10px 0 0}
+.ph{position:relative;overflow:hidden;background:linear-gradient(160deg,#E9EDF2,#D7DDE4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:#6B7684;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-align:center}
+.ph.dark{background:linear-gradient(160deg,#2A2F36,#171A1E);color:#8A929C}
+.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-img img{border-radius:28px 28px 0 0}
+section{padding:88px 0}
+.oscuro{background:var(--negro);color:#fff}
+.cabecera-seccion{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+label{font-size:12px;font-weight:600;color:var(--grafito)}
+select,input{min-height:48px;border:1px solid #D5DAE0;border-radius:12px;padding:0 14px;font-family:inherit;font-size:15px;background:#fff;color:var(--texto);width:100%}
+.campo{display:flex;flex-direction:column;gap:6px}
+
+/* Header */
+header{position:sticky;top:0;z-index:50;background:rgba(15,17,20,.96);backdrop-filter:blur(8px)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px}
+.logo{display:flex;flex-direction:column;line-height:1}
+.logo b{font-size:24px;font-weight:800;color:var(--azul-claro);letter-spacing:-.01em}
+.logo span{font-size:13px;font-weight:600;color:var(--gris);letter-spacing:.06em}
+.menu{display:flex;gap:28px;font-size:14px;font-weight:600}
+.menu a{color:#fff;opacity:.9}.menu a:hover{opacity:1;color:var(--azul-claro)}
+.hamb{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer;color:#fff}
+
+/* Hero */
+.hero{padding:40px 0 0}
+.hero-grid{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.hero-txt{flex:1 1 440px;min-width:0;padding:40px 0}
+.hero h1{font-size:clamp(38px,4.4vw,62px);font-weight:800;letter-spacing:-.03em;line-height:1.02;margin:14px 0 0}
+.hero p.lead{font-size:18px;line-height:1.6;color:#C3C8CF;max-width:480px;margin:22px 0 0}
+.acciones{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.hero-img{flex:1 1 520px;min-width:0;height:460px;border-radius:28px 28px 0 0}
+
+/* Buscador */
+.buscador-zona{background:var(--suave);padding:0 0 44px}
+.buscador{position:relative;top:-40px;background:#fff;border-radius:22px;box-shadow:0 18px 50px rgba(15,17,20,.12);padding:24px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) auto;gap:16px;align-items:end}
+.chips{display:flex;gap:12px;flex-wrap:wrap;margin-top:-8px}
+.chip{min-height:44px;padding:0 20px;border-radius:999px;font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;border:1px solid #D5DAE0;background:#fff;color:var(--texto)}
+.chip.on{background:var(--texto);border-color:var(--texto);color:#fff}
+
+/* Cards */
+.grid-carros{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px}
+.carro{border:1px solid var(--linea);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;background:#fff;transition:box-shadow .2s,transform .2s}
+.carro:hover{box-shadow:0 18px 40px rgba(15,17,20,.1);transform:translateY(-3px)}
+.carro .ph{height:190px;position:relative}
+.tag{position:absolute;top:14px;left:14px;padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.04em;background:var(--azul);color:#fff;text-transform:none}
+.tag.nuevo{background:var(--texto)}
+.carro-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:12px;flex:1}
+.carro h3{margin:0;font-size:19px;font-weight:800}
+.carro .ver{margin:4px 0 0;font-size:13px;color:var(--grafito)}
+.datos{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;font-weight:600;color:#3D4249}
+.datos span{background:#F1F4F7;border-radius:8px;padding:6px 10px}
+.precio{margin:4px 0 0;font-size:22px;font-weight:800}
+.carro-btns{display:flex;gap:10px;margin-top:auto}
+.carro-btns .btn{flex:1;min-height:44px;padding:0 14px;font-size:14px}
+.carro.oculto{display:none}
+
+.grid-prox{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
+.prox{background:var(--negro2);border-radius:22px;overflow:hidden;border:1px solid #2A2F36}
+.prox .ph{height:180px}
+.prox-body{padding:20px 22px 24px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.prox h3{margin:0;font-size:18px;font-weight:800}
+.prox p{margin:4px 0 0;font-size:13px;color:var(--gris)}
+
+/* Financiación */
+.fin{background:var(--suave)}
+.fin-grid{display:flex;flex-wrap:wrap;gap:48px;align-items:center}
+.fin-grid>div,.fin-grid>form{flex:1 1 400px;min-width:0}
+.pasos{list-style:none;padding:0;margin:30px 0 0;display:flex;flex-direction:column;gap:18px}
+.pasos li{display:flex;gap:16px;align-items:flex-start}
+.pasos .n{flex:0 0 40px;height:40px;border-radius:12px;background:var(--azul);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center}
+.pasos p{margin:4px 0 0;color:var(--grafito);font-size:14px}
+.form-card{background:#fff;border-radius:26px;padding:32px;box-shadow:0 18px 50px rgba(15,17,20,.08);display:flex;flex-direction:column;gap:16px}
+.form-card h3{margin:0;font-size:22px;font-weight:800}
+
+/* Videos */
+.grid-videos{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.video{height:380px;border-radius:22px}
+.play{width:56px;height:56px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.12)}
+
+/* Ubicación */
+.ubi{background:var(--negro);color:#fff;border-radius:30px;overflow:hidden;display:flex;flex-wrap:wrap}
+.ubi-txt{flex:1 1 420px;min-width:0;padding:48px}
+.ubi dl{margin:28px 0 0;display:grid;grid-template-columns:auto 1fr;gap:14px 20px;font-size:15px}
+.ubi dt{color:var(--gris);font-weight:600}.ubi dd{margin:0;font-weight:600}
+.mapa{flex:1 1 420px;min-width:0;min-height:380px}
+
+footer{background:var(--negro);color:var(--gris);padding:56px 0 32px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
+.foot-cols{display:flex;gap:56px;flex-wrap:wrap;font-size:14px}
+.foot-cols div{display:flex;flex-direction:column;gap:10px}
+.foot-cols strong{color:#fff}.foot-cols a{color:var(--gris)}.foot-cols a:hover{color:#fff}
+.copy{margin:40px 0 0;padding-top:24px;border-top:1px solid #2A2F36;font-size:12px}
+
+.wa{position:fixed;right:24px;bottom:24px;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:60}
+.demo{background:#FBBD0A;color:#1D1D1B;text-align:center;font-size:12px;font-weight:700;padding:8px 16px}
+
+/* Responsive */
+@media (max-width:1000px){
+  .buscador{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .buscador .btn{grid-column:1/-1}
+  .grid-videos{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:820px){
+  .wrap{padding:0 20px}
+  section{padding:64px 0}
+  .hamb{display:inline-flex;align-items:center;justify-content:center}
+  .menu{display:none;position:absolute;top:76px;left:0;right:0;background:var(--negro);flex-direction:column;gap:0;padding:8px 20px 20px;border-top:1px solid #2A2F36}
+  .menu a{padding:14px 0;border-bottom:1px solid #22262c;font-size:16px}
+  .menu.abierto{display:flex}
+  .nav .btn-cotiza{display:none}
+  .hero-txt{padding:24px 0 0}
+  .hero p.lead{font-size:16px}
+  .hero-img{height:280px;border-radius:22px 22px 0 0}
+  .acciones .btn{flex:1 1 100%}
+  .ubi-txt{padding:32px 24px}
+  .ubi dl{grid-template-columns:1fr;gap:4px}
+  .ubi dd{margin-bottom:12px}
+  .mapa{min-height:260px}
+  .video{height:300px}
+}
+@media (max-width:520px){
+  .buscador{grid-template-columns:1fr;padding:18px}
+  .grid-videos{grid-template-columns:1fr 1fr;gap:12px}
+  .video{height:240px}
+  .chips{flex-wrap:nowrap;overflow-x:auto;padding-bottom:6px}
+  .chip{flex:0 0 auto}
+}
+</style>
+</head>
+<body>
+
+<div class="demo">Propuesta de diseño · Touge Lab para Jiménez Automotriz</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" class="logo" aria-label="Jiménez Automotriz, inicio"><b>Jiménez</b><span>Automotriz</span></a>
+    <nav class="menu" id="menu">
+      <a href="#vehiculos">Vehículos</a>
+      <a href="#proximos">Próximos a llegar</a>
+      <a href="#financiacion">Financiación</a>
+      <a href="#clientes">Nosotros</a>
+      <a href="#ubicacion">Cómo llegar</a>
+    </nav>
+    <a href="#financiacion" class="btn btn-azul btn-cotiza" style="min-height:44px">Cotiza aquí</a>
+    <button class="hamb" id="hamb" aria-label="Abrir menú" aria-expanded="false">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<section id="inicio" class="oscuro hero">
+  <div class="wrap hero-grid">
+    <div class="hero-txt">
+      <p class="kick">Showroom · Vehículos nuevos y usados</p>
+      <h1>Tu próximo carro<br>te está esperando.</h1>
+      <p class="lead">Encuentra el vehículo ideal en nuestro inventario, apártalo antes de que llegue y estrénalo con financiación a tu medida.</p>
+      <div class="acciones">
+        <a href="#vehiculos" class="btn btn-blanco">Ver inventario</a>
+        <a href="https://wa.me/57XXXXXXXXXX" target="_blank" rel="noopener" class="btn btn-linea">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>
+          Escríbenos por WhatsApp</a>
+      </div>
+    </div>
+    <div class="ph dark hero-img"><img src="images/sedan-mercedes-benz.jpg" alt="Sedán Mercedes-Benz" loading="eager"></div>
+  </div>
+</section>
+
+<div class="buscador-zona">
+  <div class="wrap">
+    <form class="buscador" onsubmit="event.preventDefault();location.hash='vehiculos'">
+      <div class="campo"><label for="f-marca">Marca</label><select id="f-marca"><option>Todas las marcas</option><option>Citroën</option><option>Suzuki</option></select></div>
+      <div class="campo"><label for="f-tipo">Tipo</label><select id="f-tipo"><option>Todos los tipos</option><option>SUV</option><option>Sedán</option><option>Hatchback</option><option>Pickup</option></select></div>
+      <div class="campo"><label for="f-precio">Precio hasta</label><select id="f-precio"><option>Cualquier precio</option></select></div>
+      <div class="campo"><label for="f-anio">Año desde</label><select id="f-anio"><option>Cualquier año</option><option>2025</option><option>2024</option><option>2023</option></select></div>
+      <button type="submit" class="btn btn-azul">Buscar vehículo</button>
+    </form>
+    <div class="chips" id="chips">
+      <button class="chip on" data-tipo="todos">Todos</button>
+      <button class="chip" data-tipo="suv">SUV</button>
+      <button class="chip" data-tipo="sedan">Sedán</button>
+      <button class="chip" data-tipo="hatch">Hatchback</button>
+      <button class="chip" data-tipo="pickup">Pickup</button>
+      <button class="chip" data-tipo="alta">Gama alta</button>
+    </div>
+  </div>
+</div>
+
+<section id="vehiculos">
+  <div class="wrap">
+    <div class="cabecera-seccion">
+      <div><p class="kick">Disponibles ahora</p><h2 class="titulo">Inventario en showroom</h2></div>
+      <a href="#vehiculos" style="font-weight:700;font-size:15px">Ver todos los vehículos →</a>
+    </div>
+    <div class="grid-carros" id="carros"></div>
+  </div>
+</section>
+
+<section id="proximos" class="oscuro">
+  <div class="wrap">
+    <div class="cabecera-seccion">
+      <div><p class="kick">Próximos a llegar</p><h2 class="titulo">Apártalo antes que nadie</h2></div>
+      <p style="max-width:420px;color:#C3C8CF;font-size:16px;line-height:1.6;margin:0">Estos vehículos vienen en camino. Escríbenos y te avisamos primero cuando lleguen al showroom.</p>
+    </div>
+    <div class="grid-prox">
+      <article class="prox"><div class="ph dark"><img src="images/sedan-bmw-serie-3.jpg" alt="Sedán BMW Serie 3" loading="lazy"></div><div class="prox-body"><div><h3>BMW Serie 3</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
+      <article class="prox"><div class="ph dark"><img src="images/sedan-audi-a4.jpg" alt="Sedán Audi A4" loading="lazy"></div><div class="prox-body"><div><h3>Audi A4</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
+      <article class="prox"><div class="ph dark"><img src="images/suv-kia-seltos.jpg" alt="SUV Kia Seltos" loading="lazy"></div><div class="prox-body"><div><h3>Kia Seltos</h3><p>Próximo a llegar</p></div><a href="https://wa.me/57XXXXXXXXXX" class="btn btn-blanco" style="min-height:44px;padding:0 18px;font-size:14px">Apartar</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="financiacion" class="fin">
+  <div class="wrap fin-grid">
+    <div>
+      <p class="kick">Financiación</p><h2 class="titulo">Estrena con un plan a tu medida</h2>
+      <p style="font-size:16px;line-height:1.6;color:var(--grafito);margin:18px 0 0;max-width:460px">Te acompañamos en el crédito de tu vehículo, desde la solicitud hasta la entrega.</p>
+      <ol class="pasos">
+        <li><span class="n">1</span><div><strong>Elige tu vehículo</strong><p>En el inventario o entre los próximos a llegar.</p></div></li>
+        <li><span class="n">2</span><div><strong>Solicita tu pre-aprobación</strong><p>Déjanos tus datos y un asesor te contacta.</p></div></li>
+        <li><span class="n">3</span><div><strong>Recíbelo en el showroom</strong><p>Te entregamos tu carro listo para rodar.</p></div></li>
+      </ol>
+    </div>
+    <form class="form-card" onsubmit="event.preventDefault();this.querySelector('.ok').hidden=false">
+      <h3>Solicita tu pre-aprobación</h3>
+      <div class="campo"><label for="p-nombre">Nombre completo</label><input id="p-nombre" placeholder="Tu nombre" required></div>
+      <div class="campo"><label for="p-cel">Celular</label><input id="p-cel" type="tel" placeholder="300 000 0000" required></div>
+      <div class="campo"><label for="p-veh">Vehículo de interés</label><select id="p-veh"><option>Selecciona un vehículo</option><option>Citroën C3 2025</option><option>Suzuki S-Cross 2024</option></select></div>
+      <button type="submit" class="btn btn-azul" style="margin-top:6px">Enviar solicitud</button>
+      <p class="ok" hidden style="margin:0;font-size:14px;font-weight:600;color:#1B8F6A">¡Listo! Un asesor te contactará pronto. (Demo)</p>
+      <p style="margin:0;font-size:12px;color:var(--grafito)">Al enviar aceptas la política de tratamiento de datos.</p>
+    </form>
+  </div>
+</section>
+
+<section id="clientes">
+  <div class="wrap">
+    <p class="kick">Clientes felices</p><h2 class="titulo" style="margin-bottom:36px">Cada entrega es un sueño cumplido</h2>
+    <div class="grid-videos">
+      <div class="ph video"><span class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2C6CA6" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>Video de entrega</div>
+      <div class="ph video"><span class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2C6CA6" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>Video de entrega</div>
+      <div class="ph video"><span class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2C6CA6" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>Video de entrega</div>
+      <div class="ph video"><span class="play"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2C6CA6" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>Video de entrega</div>
+    </div>
+  </div>
+</section>
+
+<section id="ubicacion" style="padding-top:0">
+  <div class="wrap">
+    <div class="ubi">
+      <div class="ubi-txt">
+        <p class="kick" style="color:var(--azul-claro)">Visítanos</p><h2 class="titulo">Cómo llegar al showroom</h2>
+        <dl>
+          <dt>Dirección</dt><dd>[DIRECCIÓN DEL SHOWROOM]</dd>
+          <dt>Horarios</dt><dd>[HORARIOS DE ATENCIÓN]</dd>
+          <dt>WhatsApp</dt><dd>[NÚMERO DE WHATSAPP]</dd>
+        </dl>
+        <div class="acciones">
+          <a href="#ubicacion" class="btn btn-azul">Abrir en Google Maps</a>
+          <a href="#ubicacion" class="btn btn-linea">Ver video de cómo llegar</a>
+        </div>
+      </div>
+      <div class="ph dark mapa">Mapa de Google</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="logo"><b>Jiménez</b><span>Automotriz</span></div>
+      <div class="foot-cols">
+        <div><strong>Vehículos</strong><a href="#vehiculos">Disponibles</a><a href="#proximos">Próximos a llegar</a></div>
+        <div><strong>Servicio</strong><a href="#financiacion">Financiación</a><a href="#ubicacion">Cómo llegar</a></div>
+        <div><strong>Información</strong><a href="#inicio">Política de datos</a><a href="#inicio">Términos y condiciones</a></div>
+      </div>
+    </div>
+    <p class="copy">© 2026 Jiménez Automotriz. Todos los derechos reservados. · Diseño: Touge Lab</p>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/57XXXXXXXXXX" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg>
+</a>
+
+<script>
+const carros=[
+ {n:'Citroën C3',v:'Automática',a:'2025',k:'[KM]',c:'Automática',p:'[PRECIO]',t:'Disponible',tipo:'hatch',img:'citroen-c3.jpg'},
+ {n:'Suzuki S-Cross',v:'GLX 4x4',a:'2024',k:'[KM]',c:'Mecánica',p:'[PRECIO]',t:'Recién llegado',tipo:'suv',img:'suzuki-s-cross.jpg'},
+ {n:'Renault Logan',v:'Intens',a:'2020',k:'[KM]',c:'Mecánica',p:'[PRECIO]',t:'Disponible',tipo:'sedan',img:'renault-logan-colombia.png'},
+ {n:'Kia Cerato',v:'Sedán',a:'2011',k:'[KM]',c:'Mecánica',p:'[PRECIO]',t:'Disponible',tipo:'sedan',img:'kia-cerato.jpg'},
+ {n:'Chevrolet Sonic',v:'Sedán',a:'2017',k:'[KM]',c:'Automática',p:'[PRECIO]',t:'Recién llegado',tipo:'sedan',img:'chevrolet-sonic.jpg'},
+ {n:'Hyundai i25',v:'Accent sedán',a:'RB',k:'[KM]',c:'Mecánica',p:'[PRECIO]',t:'Disponible',tipo:'sedan',img:'hyundai-i25-accent.jpg'}
+];
+const WA='https://wa.me/57XXXXXXXXXX?text=';
+document.getElementById('carros').innerHTML=carros.map(x=>`
+<article class="carro" data-tipo="${x.tipo}">
+  <div class="ph">${x.img ? `<img src="images/${x.img}" alt="${x.n}" loading="lazy">` : 'Foto del vehículo'}<span class="tag ${x.t==='Recién llegado'?'nuevo':''}">${x.t}</span></div>
+  <div class="carro-body">
+    <div><h3>${x.n}</h3><p class="ver">${x.v}</p></div>
+    <div class="datos"><span>${x.a}</span><span>${x.k}</span><span>${x.c}</span></div>
+    <p class="precio">${x.p}</p>
+    <div class="carro-btns">
+      <a href="#vehiculos" class="btn btn-suave">Ver ficha</a>
+      <a href="${WA+encodeURIComponent('Hola, quiero cotizar el '+x.n+' '+x.a)}" target="_blank" rel="noopener" class="btn btn-azul">Cotizar</a>
+    </div>
+  </div>
+</article>`).join('');
+document.getElementById('chips').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));
+  const t=b.dataset.tipo;
+  document.querySelectorAll('.carro').forEach(c=>c.classList.toggle('oculto',t!=='todos'&&c.dataset.tipo!==t));
+});
+const hamb=document.getElementById('hamb'),menu=document.getElementById('menu');
+hamb.addEventListener('click',()=>{const a=menu.classList.toggle('abierto');hamb.setAttribute('aria-expanded',a)});
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('abierto');hamb.setAttribute('aria-expanded',false)}));
+</script>
+</body>
+</html>
+
+
+
